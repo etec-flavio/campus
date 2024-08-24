@@ -1,0 +1,37 @@
+{
+    "short_name": "Campus",
+    "name": "campus",
+    "description": "Utilize a plataforma de ensino de programação Campus!",
+    "icons": [
+        {
+            "src": "static/light/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "static/light/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "static/dark/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "static/dark/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#72cb10",
+    "background_color": "#f8fcf5",
+    "lang": "pt-br",
+    "orientation": "portrait",
+    "display": "standalone",
+    "display_override": [
+        "window-controls-overlay",
+        "standalone"
+    ],
+    "categories": ["cursos", "programação"]
+}
