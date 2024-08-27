@@ -1,0 +1,51 @@
+@layer reset, base, layout, components, theme;
+
+@layer layout {
+    header {
+        background-color: var(--background-500);
+        background-image: url("../../public/static/header-bg.jpeg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+
+        position: relative;
+        height: clamp(60vh, 80vh, 90vh);
+        overflow-y: hidden;
+        margin-bottom: 6em;
+
+        grid-template-rows: minmax(0, 2rem) 1fr 4fr minmax(0, 2rem);
+
+        * {
+            z-index: 1;
+        }
+    }
+
+    nav {
+        grid-row: 2;
+    }
+
+    .logo a {
+        text-decoration: none;
+        border: none;
+        font-weight: 700;
+        font-size: 2.827rem;
+        text-transform: uppercase;
+    }
+
+    .content {
+        grid-row: 3;
+    }
+
+    .pinned {
+        position: absolute;
+        bottom: -17.5em;
+        z-index: 0;
+
+        width: 20vw;
+
+        path {
+            fill: var(--background-50);
+        }
+    }
+}
