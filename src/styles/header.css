@@ -1,0 +1,66 @@
+@layer reset, base, layout, components, theme;
+
+@layer base {
+    header {
+        padding: 2em 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        transition: all .3s ease-in-out;
+        
+        a {
+            border: none;
+        }
+
+        & + * {
+            margin-top: 6em;
+        }
+    }
+    
+    header.sticky {
+        background-color: var(--background-50-70);
+        backdrop-filter: blur(2em);
+        padding: 1em 0;
+        transition: all .3s ease-in-out;
+    }
+
+    header .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+    }
+
+    header nav ul {
+        display: flex;
+        font-display: row;
+        justify-content: start;
+        align-items: center;
+        gap: 1em;
+    }
+
+    header nav a {
+        color: var(--text-800);
+
+        &:hover {
+            color: var(--text-600);
+        }
+    }
+
+    header .logo h2 {
+        font-size: 1.999rem;
+        line-height: 2.5rem;
+        color: var(--text-950);
+        transition: all .2s ease-in-out;
+        
+        &:hover {
+            color: var(--text-600);
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+}
