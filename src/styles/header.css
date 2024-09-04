@@ -1,51 +1,66 @@
 @layer reset, base, layout, components, theme;
 
-@layer layout {
+@layer base {
     header {
-        background-color: var(--background-500);
-        background-image: url("../../public/static/header-bg.jpeg");
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
+        padding: 2em 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        transition: all .3s ease-in-out;
+        
+        a {
+            border: none;
+        }
 
-        position: relative;
-        height: clamp(60vh, 80vh, 90vh);
-        overflow-y: hidden;
-        margin-bottom: 6em;
+        & + * {
+            margin-top: 6em;
+        }
+    }
+    
+    header.sticky {
+        background-color: var(--background-50-70);
+        backdrop-filter: blur(2em);
+        padding: 1em 0;
+        transition: all .3s ease-in-out;
+    }
 
-        grid-template-rows: minmax(0, 2rem) 1fr 4fr minmax(0, 2rem);
+    header .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+    }
 
-        * {
-            z-index: 1;
+    header nav ul {
+        display: flex;
+        font-display: row;
+        justify-content: start;
+        align-items: center;
+        gap: 1em;
+    }
+
+    header nav a {
+        color: var(--text-800);
+
+        &:hover {
+            color: var(--text-600);
         }
     }
 
-    nav {
-        grid-row: 2;
-    }
+    header .logo h2 {
+        font-size: 1.999rem;
+        line-height: 2.5rem;
+        color: var(--text-950);
+        transition: all .2s ease-in-out;
+        
+        &:hover {
+            color: var(--text-600);
+        }
 
-    .logo a {
-        text-decoration: none;
-        border: none;
-        font-weight: 700;
-        font-size: 2.827rem;
-        text-transform: uppercase;
-    }
-
-    .content {
-        grid-row: 3;
-    }
-
-    .pinned {
-        position: absolute;
-        bottom: -17.5em;
-        z-index: 0;
-
-        width: 20vw;
-
-        path {
-            fill: var(--background-50);
+        &::before {
+            display: none;
         }
     }
 }

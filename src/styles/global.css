@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @layer reset, base, layout, components, theme;
 
 @layer reset {
@@ -20,6 +21,7 @@
         border: 0;
         font-size: 100%;
         font: inherit;
+        font-family: var(--font-default);
         vertical-align: baseline;
     }
 
@@ -58,6 +60,28 @@
 }
 
 @layer base {
+    body {
+        background-image: url("../../public/static/header-bg.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -2;
+        position: relative;
+    }
+
+    body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: var(--background-50);
+        z-index: -1;
+        opacity: .6;
+        backdrop-filter: blur(20em);
+        pointer-events: none;
+    }
+
     a {
         text-decoration: none;
         border-bottom: .125rem solid;
@@ -82,6 +106,38 @@
             top: 50%;
             left: -3rem;
             transform: translate(0, -50%);
+        }
+    }
+
+    body {
+        background-color: var(--background-50);
+        color: var(--text-950);
+    }
+
+    a {
+        color: var(--accent-500);
+        border-color: var(--accent-500);
+
+        &:hover {
+            color: var(--accent-300);
+            border-color: var(--accent-300);
+            cursor: pointer;
+            transition: color .2s ease-in-out,
+                        border-color .2s ease-in-out;
+        }
+    }
+
+    a:has(h1, h2, h3, h4, h5) {
+        & :where(h1, h2, h3, h4, h5)::before {
+            opacity: 0;
+            transition: all .1s ease-in-out;
+        }
+    }
+
+    a:hover:has(h1, h2, h3, h4, h5) {
+        & :where(h1, h2, h3, h4, h5)::before {
+            opacity: 1;
+            transition: all .1s ease-in-out;
         }
     }
 }
@@ -111,6 +167,11 @@
 }
 
 @layer theme {
+    :root {
+        --font-default: "Inter", Sans-Serif;
+        --font-mono: "JetBrains Mono", Monospace;
+    }
+
     @media (prefers-color-scheme: light) {
         :root {
             --text-50: #f3f8ed;
@@ -126,6 +187,7 @@
             --text-950: #0d1207;
 
             --background-50: #f1f9eb;
+            --background-50-70: rgba(241, 249, 235, 0.7);
             --background-100: #e4f3d8;
             --background-200: #c8e8b0;
             --background-300: #addc89;
@@ -136,6 +198,7 @@
             --background-800: #2f4f17;
             --background-900: #18270c;
             --background-950: #0c1406;
+            --background-950-70: rgba(12, 20, 6, 0.7);
 
             --primary-50: #f3fde7;
             --primary-100: #e6fbd0;
@@ -172,7 +235,6 @@
             --accent-800: #345313;
             --accent-900: #1a290a;
             --accent-950: #0d1505;
-
         }
     }
 
@@ -191,6 +253,7 @@
             --text-950: #f2f6ef;
             
             --background-50: #0d1208;
+            --background-50-70: rgba(13, 18, 8, 0.7);
             --background-100: #1a2310;
             --background-200: #33471f;
             --background-300: #4d6a2f;
@@ -201,6 +264,7 @@
             --background-800: #cce0b8;
             --background-900: #e6efdc;
             --background-950: #f2f7ed;
+            --background-950-70: rgba(242, 247, 237, 0.7);
             
             --primary-50: #0d1802;
             --primary-100: #1a2f04;
@@ -237,38 +301,6 @@
             --accent-800: #cdf3a5;
             --accent-900: #e6f9d2;
             --accent-950: #f3fce8;
-        }
-    }
-
-    body {
-        background-color: var(--background-50);
-        color: var(--text-950);
-    }
-
-    a {
-        color: var(--accent-500);
-        border-color: var(--accent-500);
-
-        &:hover {
-            color: var(--accent-300);
-            border-color: var(--accent-300);
-            cursor: pointer;
-            transition: color .2s ease-in-out,
-                        border-color .2s ease-in-out;
-        }
-    }
-
-    a:has(h1, h2, h3, h4, h5) {
-        & :where(h1, h2, h3, h4, h5)::before {
-            opacity: 0;
-            transition: all .1s ease-in-out;
-        }
-    }
-
-    a:hover:has(h1, h2, h3, h4, h5) {
-        & :where(h1, h2, h3, h4, h5)::before {
-            opacity: 1;
-            transition: all .1s ease-in-out;
         }
     }
 }
