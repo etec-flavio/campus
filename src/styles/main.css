@@ -1,0 +1,149 @@
+@layer base {
+    .greeting {
+        min-height: calc(100dvh - 12em);
+        padding: 8em 0 4em 0;
+    }
+
+    .greeting .layout {
+        display: grid;
+        grid-template-columns: minmax(20ch,2fr) minmax(40%,3fr);
+        align-items: start;
+    }
+
+    .animated-text {
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    .animated-text span {
+        position: relative;
+
+        &::before {
+            content: "";
+            background: linear-gradient(to right, #2c621d, #4baf30);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: var(--text-950);
+            animation: animated-words 30s infinite;
+        }
+    }
+
+    .wavesection {
+        background-color: var(--background-50);
+        position: relative;
+
+        svg {
+            z-index: -1;
+            position: absolute;
+            top: -28em;
+            width: 100%;
+            overflow: hidden;
+            -webkit-filter: blur(1em);
+            filter: blur(1em);
+            scale: 1.2;
+        }
+        
+        svg g path {
+            fill: var(--background-50);
+        }
+    }
+
+    .wave {
+        width: 100vw;
+    }
+
+    .demonstration article {
+        display: grid;
+        grid-template-columns: 3fr 680px;
+        gap: 2em;
+    }
+
+    .code-desc p {
+        text-wrap: balance;
+    }
+
+    .code-container {
+        background-color: var(--background-100);
+        border-radius: .5em;
+        padding: .2em;
+        user-select: none;
+    }
+
+    .code-container nav {
+        padding: 1em;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            background-color: transparent;
+            border-radius: .2em;
+            outline: none;
+            border: none;
+            color: var(--text-950);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: .5em;
+            transition: all .3s ease-in-out;
+            padding: 0 .6em;
+            height: 32px;
+        }
+
+        button:hover {
+            color: var(--text-800);
+            background-color: var(--background-200);
+            transition: all .3s ease-in-out;
+        }
+
+        .icon svg {
+            width: 1.4em;
+            height: 1.4em;
+        }
+    }
+
+    .code-content {
+        background-color: var(--background-50);
+        border-radius: 0 0 calc(.5em - .2em) calc(.5em - .2em);
+        max-height: 420px;
+        overflow: auto;
+    }
+
+    .code-content pre {
+        font-family: var(--font-mono);
+        background-color: transparent !important;
+        margin: 0 !important;
+        outline: none !important;
+        
+        code {
+            user-select: text;
+        }
+    }
+
+    @keyframes animated-words {
+        0%, 16% {
+            content: "domine novas linguagens de programação.";
+        }
+        
+        17%, 33% {
+            content: "crie projetos desafiadores e inovadores.";
+        }
+        
+        34%, 50% {
+            content: "esteja à frente das tendências tecnológicas.";
+        }
+        
+        51%, 67% {
+            content: "transforme ideias em realidade.";
+        }
+        
+        68%, 84% {
+            content: "conquiste o mercado de trabalho.";
+        }
+        
+        85%, 100% {
+            content: "porque com Campus é possível!";
+        }
+    }
+}

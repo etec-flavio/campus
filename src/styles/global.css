@@ -30,7 +30,7 @@
         display: block;
     }
     body {
-        line-height: 1.75rem;
+        line-height: 1.6rem;
     }
     ol, ul {
         list-style: none;
@@ -51,21 +51,32 @@
     h1, h2, h3, h4, h5 { font-weight: 700; }
 
     html { font-size: 100%; font-weight: 400; }
-    h1 { font-size: 5.652rem; line-height: 5rem; }
-    h2 { font-size: 3.997rem; line-height: 4rem; }
-    h3 { font-size: 2.827rem; line-height: 3rem; }
-    h4 { font-size: 1.999rem; line-height: 2.5rem; }
-    h5 { font-size: 1.414rem; line-height: 2rem; }
-    small { font-size: 0.707rem; line-height: 1rem; }
+    h1 { font-size: 4.210rem; line-height: 5rem; }
+    h2 { font-size: 3.158rem; line-height: 4rem; }
+    h3 { font-size: 2.369rem; line-height: 3rem; }
+    h4 { font-size: 1.777rem; line-height: 2.5rem; }
+    h5 { font-size: 1.333rem; line-height: 2rem; }
+    small { font-size: 0.750rem; line-height: 1rem; }
+
+    :where(h1, h2, h3) + p {
+        margin-top: 1.2em;
+    }
+
+    p + p {
+        margin-top: .6em;
+    }
 }
 
 @layer base {
+    html, body, main { min-height: 100dvh; }
+
     body {
         background-image: url("../../public/static/header-bg.jpeg");
         background-size: cover;
         background-repeat: no-repeat;
         z-index: -2;
         position: relative;
+        overflow-x: hidden;
     }
 
     body::after {
@@ -140,17 +151,32 @@
             transition: all .1s ease-in-out;
         }
     }
+
+    ::selection {
+        background-color: var(--secondary-200);
+    }
+
+    ::-webkit-scrollbar {
+        background-color: var(--background-50);
+        width: 18px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--text-950);
+        border: 5px solid var(--background-50);
+        border-radius: 10px;
+    }
 }
 
 @layer layout {
     .grid-layout {
         display: grid;
         grid-template-columns:
-            [full-start] minmax(2rem, 1fr)
+            [full-start] minmax(.5em, 1fr)
             [breakout-start] minmax(0, 1fr)
             [content-start] minmax(80ch, 80vw) [content-end]
             minmax(0, 1fr) [breakout-end]
-            minmax(2rem, 1fr) [full-end];
+            minmax(.5em, 1fr) [full-end];
 
         & > * {
             grid-column: content;

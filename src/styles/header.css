@@ -8,18 +8,17 @@
         right: 0;
         left: 0;
         transition: all .3s ease-in-out;
+        z-index: 2;
+        user-select: none;
         
         a {
             border: none;
-        }
-
-        & + * {
-            margin-top: 6em;
         }
     }
     
     header.sticky {
         background-color: var(--background-50-70);
+        -webkit-backdrop-filter: blur(2em);
         backdrop-filter: blur(2em);
         padding: 1em 0;
         transition: all .3s ease-in-out;
