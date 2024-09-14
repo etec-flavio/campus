@@ -1,9 +1,9 @@
 export default function useCopy(config) {
-    const configs = Array.isArray(config) ? config : [config]
+    let configs = Array.isArray(config) ? config : [config]
 
     configs.forEach(({ buttonId, textAreaId }) => {
-        const button = document.getElementById(buttonId)
-        const textArea = document.getElementById(textAreaId)
+        let button = document.getElementById(buttonId)
+        let textArea = document.getElementById(textAreaId)
 
         if (button && textArea) {
             // Cria um parágrafo para a mensagem de feedback

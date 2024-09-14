@@ -196,6 +196,7 @@
     :root {
         --font-default: "Inter", Sans-Serif;
         --font-mono: "JetBrains Mono", Monospace;
+        color-scheme: light dark;
     }
 
     @media (prefers-color-scheme: light) {

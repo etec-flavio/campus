@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
+    <!-- Meta config -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Flávio Henrique">
@@ -9,15 +9,29 @@
     <meta name="description" content="Utilize a plataforma de ensino de programação Campus!">
     <meta name="keywords" content="escola,programação,ensino,plataforma,curso,frontend,backend">
     <meta http-equiv="default-style" content="../styles/global.css">
+    <meta name="msapplication-TileColor" content="#f9fbf9">
+    <meta name="theme-color" content="#f9fbf9">
 
+    <!-- Link defaults  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/main.css">
-    <link rel="icon" href="../../public/static/light/favicon.ico" />
-    <link rel="icon" href="../../public/static/dark/favicon.ico" media="(prefers-color-scheme: dark)">
-    <link rel="manifest" href="../../public/manifest.json">
+    <link rel="manifest" href="../../public/manifest.webmanifest">
 
+    <!-- Link light icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../public/static/light/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../public/static/light/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../public/static/light/favicon-16x16.png">
+    <link rel="mask-icon" href="../../public/static/light/safari-pinned-tab.svg" color="#2c621d">
+    
+    <!-- Link dark icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../public/static/dark/apple-touch-icon.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../public/static/dark/favicon-32x32.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../public/static/dark/favicon-16x16.png" media="(prefers-color-scheme: dark)">
+    <link rel="mask-icon" href="../../public/static/dark/safari-pinned-tab.svg" color="#a1e18f" media="(prefers-color-scheme: dark)">
+
+    <!-- Scripts  -->
     <script type="module" defer>
         import useScroll from "../util/useScroll.js"
         import useCopy from "../util/useCopy.js"
@@ -85,7 +99,7 @@
                     <p>The code assumes that the datetime module is imported. The test cases cover different scenarios such as valid input, empty input, input with comments, invalid date format, and invalid value format.</p>
                 </div>
 
-                <div class="code-container tiltable" data-tilt data-tilt data-tilt-max="1" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-glare data-tilt-max-glare="0.05">
+                <div class="code-container tiltable" data-tilt data-tilt data-tilt-max="15" data-tilt-speed="500" data-tilt-perspective="1000" data-tilt-glare data-tilt-max-glare="0.2" data-tilt-startX="15" data-tilt-startY="-15" data-tilt-reset-to-start="true">
                     <nav>
                         <div class="language">Python</div>
                         <button type="button" class="copy" id="copyButton1">
